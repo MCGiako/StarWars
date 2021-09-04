@@ -9,6 +9,12 @@ export const VistaPersonajes = () => {
 				<CardPersonaje />
 				<CardPersonaje />
 				<CardPersonaje />
+				<CardPersonaje />
+				<CardPersonaje />
+				<CardPersonaje />
+				<CardPersonaje />
+				<CardPersonaje />
+				<CardPersonaje />
 			</div>
 		</div>
 	);

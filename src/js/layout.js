@@ -13,6 +13,8 @@ import { CardPersonaje } from "./component/cardPersonaje";
 import { CardPlanetas } from "./component/cardPlanetas";
 import { CardVehículos } from "./component/cardVehículos";
 import { VistaPersonajes } from "./views/VistaPersonajes";
+import { VistaPlanetas } from "./views/VistaPlanetas";
+import { VistaVehículos } from "./views/VistaVehículos";
 
 //create your first component
 const Layout = () => {
