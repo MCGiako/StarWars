@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
-export const CardPersonaje = props => {
+export const CardPersonajes = props => {
 	const { store, actions } = useContext(Context);
 	console.log(props);
 	return (
@@ -24,7 +24,7 @@ export const CardPersonaje = props => {
 		</div>
 	);
 };
-CardPersonaje.propTypes = {
+CardPersonajes.propTypes = {
 	personajes: PropTypes.object,
 	name: PropTypes.string
 };
