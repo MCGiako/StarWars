@@ -1,14 +1,19 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 export const CardPersonaje = props => {
 	const { store, actions } = useContext(Context);
+	console.log(props);
 	return (
 		<div className="card" style={{ width: "18rem" }}>
-			<img src="..." className="card-img-top" alt="..." />
+			<img
+				src="https://as.com/meristation/imagenes/2019/12/19/noticias/1576748977_381724_1576749029_noticia_normal_recorte1.jpg"
+				className="card-img-top"
+				alt="..."
+			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.personajes.name}</h5>
 				<p className="card-text" />
@@ -19,6 +24,7 @@ export const CardPersonaje = props => {
 		</div>
 	);
 };
-CardPersonaje.propstypes = {
-	name: PropsTypes.string
+CardPersonaje.propTypes = {
+	personajes: PropTypes.object,
+	name: PropTypes.string
 };

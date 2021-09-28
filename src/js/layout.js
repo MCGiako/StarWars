@@ -35,10 +35,10 @@ const Layout = () => {
 							<VistaPersonajes />
 						</Route>
 						<Route exact path="/Planetas">
-							<CardPlanetas />
+							<VistaPlanetas />
 						</Route>
 						<Route exact path="/Vehículos">
-							<CardVehículos />
+							<VistaVehículos />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

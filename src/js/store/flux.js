@@ -15,11 +15,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
                 */
 				const store = getStore();
+
 				fetch("https://www.swapi.tech/api/people/")
 					.then(response => response.json())
 					.then(result => {
 						setStore({ personajes: result.results });
-						console.log(personajes);
+						console.log(result.results);
 					})
 
 					.catch(error => console.log("error", error));

@@ -6,15 +6,6 @@ export const VistaVehículos = () => {
 			<h1>Vehículos</h1>
 			<div className="row">
 				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
-				<CardVehículos />
 			</div>
 		</div>
 	);
