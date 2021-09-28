@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { CardPersonaje } from "../component/cardPersonaje";
+import { CardPersonajes } from "../component/cardPersonajes";
 export const VistaPersonajes = () => {
 	const { store, actions } = useContext(Context);
 	console.log(store.personajes);
@@ -9,7 +10,7 @@ export const VistaPersonajes = () => {
 			{store.personajes.map((element, id) => {
 				return (
 					<>
-						<CardPersonaje key={id} personajes={element} />{" "}
+						<CardPersonajes key={id} personajes={element} />{" "}
 					</>
 				);
 			})}
