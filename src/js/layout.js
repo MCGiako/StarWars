@@ -9,7 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { CardPersonajes } from "./component/cardPersonaje";
+import { CardPersonajes } from "./component/cardPersonajes";
 import { CardPlanetas } from "./component/cardPlanetas";
 import { CardVehículos } from "./component/cardVehículos";
 import { VistaPersonajes } from "./views/VistaPersonajes";

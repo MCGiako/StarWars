@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Fragment } from "react";
 import "../../styles/home.scss";
-import { CardPersonaje } from "../component/cardPersonaje";
 import { Carrusel } from "../component/Carrusel";
 import { Context } from "../store/appContext";
 import PropsTypes from "prop-types";
+import { CardPersonajes } from "../component/cardPersonajes";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -13,7 +13,7 @@ export const Home = () => {
 			{store.personajes.map((element, id) => {
 				return (
 					<>
-						<CardPersonaje key={id} personajes={element} />{" "}
+						<CardPersonajes key={id} personajes={element} />{" "}
 					</>
 				);
 			})}
