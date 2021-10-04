@@ -14,6 +14,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			fetchInformaciónPersonajes: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/people/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ InformaciónPersonajes: result.results.properties });
+						console.log("InformaciónPersonajes", store.InformaciónPersonajes);
+					})
+					.catch(error => console.log("error", error));
+			},
+			fetchInformaciónPlanetas: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/planets/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ InformaciónPlanetas: result.results.properties });
+						console.log("InformaciónPlanetas", store.InformaciónPlanetas);
+					})
+					.catch(error => console.log("error", error));
+			},
+			fetchInformaciónVehículos: uid => {
+				const store = getStore();
+				fetch("https://www.swapi.tech/api/vehicles/" + uid)
+					.then(response => response.json())
+					.then(result => {
+						setStore({ InformaciónVehículos: result.results.properties });
+						console.log("InformaciónVehículos", store.InformaciónVehículos);
+					})
+					.catch(error => console.log("error", error));
+			},
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
@@ -29,58 +59,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.catch(error => console.log("error", error));
 
-				fetchInformaciónPersonajes: uid => {
+				fetch("https://www.swapi.tech/api/planets/")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ planetas: result.results });
+						console.log("planetas", result.results);
+					})
+					.catch(error => console.log("error", error));
+
+				fetch("https://www.swapi.tech/api/vehicles/")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ vehículos: result.results });
+						console.log(vehículos);
+					})
+
+					.catch(error => console.log("error", error));
+
+				changeColor: (index, color) => {
+					//get the store
 					const store = getStore();
-					fetch("https://www.swapi.tech/api/people/" + uid)
-						.then(response => response.json())
-						.then(result => {
-							setStore({ InformaciónPersonajes: result.results.properties });
-							console.log("InformaciónPersonajes", store.InformaciónPersonajes);
-						})
-						.catch(error => console.log("error", error));
 
-					fetch("https://www.swapi.tech/api/planets/")
-						.then(response => response.json())
-						.then(result => {
-							setStore({ planetas: result.results });
-							console.log(planetas);
-						})
-						.catch(error => console.log("error", error));
+					//we have to loop the entire demo array to look for the respective index
+					//and change its color
+					const demo = store.demo.map((elm, i) => {
+						if (i === index) elm.background = color;
+						return elm;
+					});
 
-					fetchInformaciónPlanetas: uid => {
-						const store = getStore();
-						fetch("https://www.swapi.tech/api/planets/" + uid)
-							.then(response => response.json())
-							.then(result => {
-								setStore({ InformaciónPlanetas: result.results.properties });
-								console.log("InformaciónPlanetas", store.InformaciónPlanetas);
-							})
-							.catch(error => console.log("error", error));
-
-						fetch("https://www.swapi.tech/api/vehicles/")
-							.then(response => response.json())
-							.then(result => {
-								setStore({ vehículos: result.results });
-								console.log(vehículos);
-							})
-
-							.catch(error => console.log("error", error));
-					};
-
-					changeColor: (index, color) => {
-						//get the store
-						const store = getStore();
-
-						//we have to loop the entire demo array to look for the respective index
-						//and change its color
-						const demo = store.demo.map((elm, i) => {
-							if (i === index) elm.background = color;
-							return elm;
-						});
-
-						//reset the global store
-						setStore({ demo: demo });
-					};
+					//reset the global store
+					setStore({ demo: demo });
 				};
 			}
 		}

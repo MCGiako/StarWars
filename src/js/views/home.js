@@ -10,7 +10,7 @@ import { CardVehículos } from "../component/cardVehículos";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-
+	console.log(store.planetas);
 	return (
 		<>
 			<div className="row text-center mt-5">

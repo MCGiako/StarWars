@@ -18,10 +18,11 @@ export const CardVehículos = props => {
 			<div className="card-body">
 				<div className="card-body text-warning">
 					<h5 className="card-title">{props.vehículos.name}</h5>
-					<p className="card-text" />
-					<a href="#" className="btn btn-primary">
-						Go somewhere
-					</a>
+					<Link to={"./VistaVehículos/" + CardVehículos.uid}>
+						<a href="#" className="btn btn-info text-dark">
+							Leer más
+						</a>
+					</Link>
 				</div>
 			</div>
 		</div>
