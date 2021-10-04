@@ -16,7 +16,7 @@ export const CardVehículos = props => {
 			/>
 			<div className="card-body">
 				<div className="card-body text-warning">
-					<h5 className="card-title">{props.vehículos.name}</h5>
+					<h4 className="card-title">{props.vehículos.name}</h4>
 					<p className="card-text" />
 					<a href="#" className="btn btn-primary">
 						Go somewhere
