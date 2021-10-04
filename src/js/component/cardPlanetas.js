@@ -16,7 +16,7 @@ export const CardPlanetas = props => {
 			/>
 			<div className="card-body">
 				<div className="card-body text-warning">
-					<h4 className="card-title">{props.planetas.name}</h4>
+					<h5 className="card-title">{props.planetas.name}</h5>
 					<p className="card-text" />
 					<a href="#" className="btn btn-primary">
 						Go somewhere
