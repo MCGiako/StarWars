@@ -2,8 +2,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			personajes: [],
+			InformaciónPersonajes: {},
 			planetas: [],
-			vehículos: []
+			InformaciónPlanetas: {},
+			vehículos: [],
+			InformaciónVehículos: {},
+			Favoritos: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -25,7 +29,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.catch(error => console.log("error", error));
 
-				fetch("https://swapi.tech/api/planets/")
+				fetch("https://www.swapi.tech/api/planets/")
 					.then(response => response.json())
 					.then(result => {
 						setStore({ planetas: result.results });
@@ -34,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.catch(error => console.log("error", error));
 
-				fetch("https://swapi.tech/api/vehicles/")
+				fetch("https://www.swapi.tech/api/vehicles/")
 					.then(response => response.json())
 					.then(result => {
 						setStore({ vehículos: result.results });

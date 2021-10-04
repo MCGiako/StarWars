@@ -8,18 +8,20 @@ export const CardPersonajes = props => {
 	const { store, actions } = useContext(Context);
 	console.log(props);
 	return (
-		<div className="card" style={{ width: "18rem" }}>
+		<div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ width: "18rem" }}>
 			<img
-				src="https://as.com/meristation/imagenes/2019/12/19/noticias/1576748977_381724_1576749029_noticia_normal_recorte1.jpg"
+				src="https://i2.wp.com/codigoespagueti.com/wp-content/uploads/2021/03/mace-windu-y-yoda-star-wars-quien-era-mas-pdoeroso.jpg?fit=1280%2C720&quality=80&ssl=1"
 				className="card-img-top"
 				alt="..."
 			/>
 			<div className="card-body">
-				<h5 className="card-title">{props.personajes.name}</h5>
-				<p className="card-text" />
-				<a href="#" className="btn btn-primary">
-					Go somewhere
-				</a>
+				<div className="card-body text-warning">
+					<h4 className="card-title">{props.personajes.name}</h4>
+					<p className="card-text" />
+					<a href="#" className="btn btn-primary">
+						Go somewhere
+					</a>
+				</div>
 			</div>
 		</div>
 	);
