@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 
 export const CardPlanetas = props => {
 	const { store, actions } = useContext(Context);
+	const params = useParams();
 	console.log(props);
 	return (
 		<div className="col-xs-12 col-sm-6 col-md-4 col-lg-3" style={{ width: "18rem" }}>
@@ -17,10 +18,11 @@ export const CardPlanetas = props => {
 			<div className="card-body">
 				<div className="card-body text-warning">
 					<h5 className="card-title">{props.planetas.name}</h5>
-					<p className="card-text" />
-					<a href="#" className="btn btn-primary">
-						Go somewhere
-					</a>
+					<Link to={"./VistaPlanetas/" + CardPlanetas.uid}>
+						<a href="#" className="btn btn-info text-dark">
+							Leer más
+						</a>
+					</Link>
 				</div>
 			</div>
 		</div>
