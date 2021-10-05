@@ -19,6 +19,12 @@ export const VistaPersonajes = () => {
 			<h1 className="text-white">Masa: {store.InformaciónPersonajes.mass}</h1>
 			<h1 className="text-white">Color de Pelo: {store.InformaciónPersonajes.hair_color}</h1>
 			<h1 className="text-white">Planeta Natal: {store.InformaciónPersonajes.homeworld}</h1>
+
+			<Link to="/">
+				<span className="btn btn-primary btn" href="#" role="button">
+					Back home
+				</span>
+			</Link>
 		</div>
 	);
 };

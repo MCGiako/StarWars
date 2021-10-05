@@ -19,6 +19,12 @@ export const VistaPlanetas = () => {
 			<h1 className="text-white">Terreno: {store.InformaciónPlanetas.terrain}</h1>
 			<h1 className="text-white">Gravedad: {store.InformaciónPlanetas.gravedad}</h1>
 			<h1 className="text-white">Superficie del Agua: {store.InformaciónPlanetas.SurfaceWater}</h1>
+
+			<Link to="/">
+				<span className="btn btn-primary btn" href="#" role="button">
+					Back home
+				</span>
+			</Link>
 		</div>
 	);
 };
