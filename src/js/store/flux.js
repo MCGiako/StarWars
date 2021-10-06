@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			InformaciónVehículos: {},
 			Favoritos: []
 		},
+
 		actions: {
 			personajes: () => {
 				const store = getStore();

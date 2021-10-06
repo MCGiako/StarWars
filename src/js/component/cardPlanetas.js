@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import { VistaPlanetas } from "../views/VistaPlanetas";
 
 export const CardPlanetas = props => {
 	const { store, actions } = useContext(Context);
