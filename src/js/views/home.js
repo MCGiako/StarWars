@@ -15,6 +15,7 @@ export const Home = () => {
 		<>
 			<div className="row text-center mt-5">
 				{store.personajes.map((element, id) => {
+					console.log(element);
 					return (
 						<>
 							<CardPersonajes key={id} personajes={element} />{" "}

@@ -5,20 +5,21 @@ import { Context } from "../store/appContext";
 
 export const VistaPersonajes = () => {
 	const { store, actions } = useContext(Context);
-	const { VistaPersonajesid } = useParams();
+	const VistaPersonajesid = useParams();
 
 	useEffect(() => {
-		actions.fetchInformaciónPersonajes(VistaPersonajesid);
+		actions.fetchInformacionPersonajes(VistaPersonajesid.id);
 	}, []);
+
+	console.log("informaciónpersonajes", store.informacionPersonajes);
 
 	return (
 		<div className="container">
-			<h1 className="text-white">Nombre: {store.InformaciónPersonajes.name}</h1>
-			<h1 className="text-white">Género: {store.InformaciónPersonajes.gender}</h1>
-			<h1 className="text-white">Altura: {store.InformaciónPersonajes.height}</h1>
-			<h1 className="text-white">Masa: {store.InformaciónPersonajes.mass}</h1>
-			<h1 className="text-white">Color de Pelo: {store.InformaciónPersonajes.hair_color}</h1>
-			<h1 className="text-white">Planeta Natal: {store.InformaciónPersonajes.homeworld}</h1>
+			<h1 className="text-white">Nombre: {store.informacionPersonajes.name}</h1>
+			<h1 className="text-white">Género: {store.informacionPersonajes.gender}</h1>
+			<h1 className="text-white">Altura: {store.informacionPersonajes.height}</h1>
+			<h1 className="text-white">Masa: {store.informacionPersonajes.mass}</h1>
+			<h1 className="text-white">Color de Pelo: {store.informacionPersonajes.hair_color}</h1>
 
 			<Link to="/">
 				<span className="btn btn-primary btn" href="#" role="button">

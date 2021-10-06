@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			personajes: [],
-			InformaciónPersonajes: {},
+			informacionPersonajes: {},
 			planetas: [],
 			InformaciónPlanetas: {},
 			vehículos: [],
@@ -44,13 +44,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			fetchInformaciónPersonajes: uid => {
+			fetchInformacionPersonajes: uid => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/people/" + uid)
 					.then(response => response.json())
 					.then(result => {
-						setStore({ InformaciónPersonajes: result.results.properties });
-						console.log("InformaciónPersonajes", store.InformaciónPersonajes);
+						setStore({ informacionPersonajes: result.result.properties });
+						console.log("resultfetch", result);
+						console.log(store.informacionPersonajes);
 					})
 					.catch(error => console.log("error", error));
 			},

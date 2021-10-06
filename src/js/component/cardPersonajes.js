@@ -19,7 +19,7 @@ export const CardPersonajes = props => {
 			<div className="card-body">
 				<div className="card-body text-warning">
 					<h5 className="card-title">{props.personajes.name}</h5>
-					<Link to={"./VistaPersonajes/" + CardPersonajes.uid}>
+					<Link to={"./VistaPersonajes/" + props.personajes.uid}>
 						<a href="#" className="btn btn-info text-dark">
 							Leer más
 						</a>
@@ -39,5 +39,7 @@ export const CardPersonajes = props => {
 };
 CardPersonajes.propTypes = {
 	personajes: PropTypes.object,
-	name: PropTypes.string
+	name: PropTypes.string,
+
+	uid: PropTypes.string
 };
