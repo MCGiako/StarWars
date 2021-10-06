@@ -23,6 +23,14 @@ export const CardVehículos = props => {
 							Leer más
 						</a>
 					</Link>
+					<button
+						className="btn btn-outline-warning float-right"
+						onClick={() => {
+							actions.AgregarAFavoritos(VistaVehículos.nombre);
+							console.log(store.Favoritos);
+						}}>
+						<i className="fas fa-heart text-warning" />
+					</button>
 				</div>
 			</div>
 		</div>

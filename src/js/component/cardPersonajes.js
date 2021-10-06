@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
@@ -23,6 +23,14 @@ export const CardPersonajes = props => {
 							Leer más
 						</a>
 					</Link>
+					<button
+						className="btn btn-outline-warning float-right"
+						onClick={() => {
+							actions.AgregarAFavoritos(VistaPersonajes.nombre);
+							console.log(store.Favoritos);
+						}}>
+						<i className="fas fa-heart text-warning" />
+					</button>
 				</div>
 			</div>
 		</div>

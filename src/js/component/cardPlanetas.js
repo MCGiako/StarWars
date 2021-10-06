@@ -23,6 +23,14 @@ export const CardPlanetas = props => {
 							Leer más
 						</a>
 					</Link>
+					<button
+						className="btn btn-outline-warning float-right"
+						onClick={() => {
+							actions.AgregarAFavoritos(VistaPlanetas.nombre);
+							console.log(store.Favoritos);
+						}}>
+						<i className="fas fa-heart text-warning" />
+					</button>
 				</div>
 			</div>
 		</div>
