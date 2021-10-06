@@ -10,7 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			Favoritos: []
 		},
 		actions: {
-
 			personajes: () => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/people/")
@@ -21,6 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+
 			planetas: () => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/planets/")
@@ -53,6 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+
 			fetchInformaciónPlanetas: uid => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/planets/" + uid)
@@ -63,6 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
+
 			fetchInformaciónVehículos: uid => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/vehicles/" + uid)
@@ -76,21 +78,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			AgregarAFavoritos: nombre => {
 				const store = getStore();
-				setStore({ favourites: [...store.Favoritos, nombre] });
+				setStore({ Favoritos: [...store.Favoritos, nombre] });
 				let valorPreciso = [...new Set(store.Favoritos)];
-				setStore({ favourites: valorPreciso });
-				console.log(store.favourites);
+				setStore({ Favoritos: valorPreciso });
+				console.log(store.Favoritos);
 			},
+
 			EliminarDeFavoritos: index => {
 				const store = getStore();
 				console.log(index);
 				const NuevaLista = store.Favoritos.filter(key => key !== index);
 				setStore({ Favoritos: NuevaLista });
-
 			}
 		}
 	};
 };
-
 
 export default getState;
