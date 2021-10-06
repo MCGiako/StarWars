@@ -72,19 +72,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("InformaciónVehículos", store.InformaciónVehículos);
 					})
 					.catch(error => console.log("error", error));
-				},
-					AgregarAFavoritos: nombre => {
-						const store = getStore();
-						setStore({ favourites: [...store.Favoritos, nombre] });
-						let valorPreciso = [...new Set(store.Favoritos)];
-						setStore({ favourites: valorPreciso });
-						console.log(store.favourites);
-					},
-					EliminarDeFavoritos: index => {
-						const store = getStore();
-						console.log(index);
-						const NuevaLista = store.Favoritos.filter(key => key !== index);
-						setStore({ Favoritos: NuevaLista });
+			},
+
+			AgregarAFavoritos: nombre => {
+				const store = getStore();
+				setStore({ favourites: [...store.Favoritos, nombre] });
+				let valorPreciso = [...new Set(store.Favoritos)];
+				setStore({ favourites: valorPreciso });
+				console.log(store.favourites);
+			},
+			EliminarDeFavoritos: index => {
+				const store = getStore();
+				console.log(index);
+				const NuevaLista = store.Favoritos.filter(key => key !== index);
+				setStore({ Favoritos: NuevaLista });
 
 			}
 		}
