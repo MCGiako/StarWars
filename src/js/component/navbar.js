@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 
-export const Navbar = () => {
+export const Navbarfavoritos = () => {
 	return (
 		<nav className="navbar navbar-dark bg-dark mb-3">
 			<Link to="/">

@@ -7,7 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Navbarfavoritos } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CardPersonajes } from "./component/cardPersonajes";
 import { CardPlanetas } from "./component/cardPlanetas";
@@ -26,7 +26,7 @@ const Layout = () => {
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbarfavoritos />
 					<Switch>
 						<Route exact path="/">
 							<Home />
