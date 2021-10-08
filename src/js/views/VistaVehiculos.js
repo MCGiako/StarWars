@@ -18,7 +18,6 @@ export const VistaVehiculos = () => {
 			<h1 className="text-white">Clase del vehículo: {store.InformacionVehiculos.vehicle_class}</h1>
 			<h1 className="text-white">El fabricante del vehículo: {store.InformacionVehiculos.manufacturer}</h1>
 			<h1 className="text-white">Valor del vehículo: {store.InformacionVehiculos.cost_in_credits}</h1>
-			<h1 className="text-white">El largo del vehículo: {store.InformacionVehiculos.lenght}</h1>
 			<h1 className="text-white">N° de tripulantes: {store.InformacionVehiculos.crew}</h1>
 			<h1 className="text-white">N° de pasajeros: {store.InformacionVehiculos.passengers}</h1>
 			<h1 className="text-white">Capacidad de carga del vehículo: {store.InformacionVehiculos.cargo_capacity}</h1>
