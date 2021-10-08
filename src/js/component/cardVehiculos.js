@@ -3,9 +3,9 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import { Card, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-import { VistaVehículos } from "../views/VistaVehículos";
+import { VistaVehiculos } from "../views/VistaVehiculos";
 
-export const CardVehículos = props => {
+export const CardVehiculos = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	console.log(props);
@@ -18,8 +18,8 @@ export const CardVehículos = props => {
 			/>
 			<div className="card-body">
 				<div className="card-body text-warning">
-					<h5 className="card-title">{props.vehículos.name}</h5>
-					<Link to={"./VistaVehículos/" + CardVehículos.uid}>
+					<h5 className="card-title">{props.vehiculos.name}</h5>
+					<Link to={"./VistaVehiculos/" + props.vehiculos.uid}>
 						<a href="#" className="btn btn-info text-dark">
 							Leer más
 						</a>
@@ -27,7 +27,7 @@ export const CardVehículos = props => {
 					<button
 						className="btn btn-outline-warning float-right"
 						onClick={() => {
-							actions.AgregarAFavoritos(VistaVehículos.nombre);
+							actions.AgregarAFavoritos(VistaVehiculos.name);
 							console.log(store.Favoritos);
 						}}>
 						<i className="fas fa-heart text-warning" />
@@ -37,7 +37,9 @@ export const CardVehículos = props => {
 		</div>
 	);
 };
-CardVehículos.propTypes = {
-	vehículos: PropTypes.object,
-	name: PropTypes.string
+CardVehiculos.propTypes = {
+	vehiculos: PropTypes.object,
+	name: PropTypes.string,
+
+	uid: PropTypes.string
 };

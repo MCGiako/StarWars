@@ -19,7 +19,7 @@ export const CardPlanetas = props => {
 			<div className="card-body">
 				<div className="card-body text-warning">
 					<h5 className="card-title">{props.planetas.name}</h5>
-					<Link to={"./VistaPlanetas/" + CardPlanetas.uid}>
+					<Link to={"./VistaPlanetas/" + props.planetas.uid}>
 						<a href="#" className="btn btn-info text-dark">
 							Leer más
 						</a>
@@ -27,7 +27,7 @@ export const CardPlanetas = props => {
 					<button
 						className="btn btn-outline-warning float-right"
 						onClick={() => {
-							actions.AgregarAFavoritos(VistaPlanetas.nombre);
+							actions.AgregarAFavoritos(VistaPlanetas.name);
 							console.log(store.Favoritos);
 						}}>
 						<i className="fas fa-heart text-warning" />
@@ -39,5 +39,7 @@ export const CardPlanetas = props => {
 };
 CardPlanetas.propTypes = {
 	planetas: PropTypes.object,
-	name: PropTypes.string
+	name: PropTypes.string,
+
+	uid: PropTypes.string
 };

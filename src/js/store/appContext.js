@@ -33,7 +33,7 @@ const injectContext = PassedComponent => {
 			 **/
 			state.actions.personajes();
 			state.actions.planetas();
-			state.actions.vehículos();
+			state.actions.vehiculos();
 			state.actions.AgregarAFavoritos();
 			state.actions.EliminarDeFavoritos();
 		}, []);

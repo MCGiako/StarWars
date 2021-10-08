@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import PropsTypes from "prop-types";
 import { CardPersonajes } from "../component/cardPersonajes";
 import { CardPlanetas } from "../component/cardPlanetas";
-import { CardVehículos } from "../component/cardVehículos";
+import { CardVehiculos } from "../component/cardVehiculos";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -27,7 +27,6 @@ export const Home = () => {
 				{store.planetas.map((element, id) => {
 					return (
 						<>
-							{console.log(store.planetas)}
 							<CardPlanetas key={id} planetas={element} />{" "}
 						</>
 					);
@@ -35,10 +34,10 @@ export const Home = () => {
 			</div>
 
 			<div className="row text-center mt-5">
-				{store.vehículos.map((element, id) => {
+				{store.vehiculos.map((element, id) => {
 					return (
 						<>
-							<CardVehículos key={id} vehículos={element} />{" "}
+							<CardVehiculos key={id} vehiculos={element} />{" "}
 						</>
 					);
 				})}

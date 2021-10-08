@@ -11,10 +11,10 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CardPersonajes } from "./component/cardPersonajes";
 import { CardPlanetas } from "./component/cardPlanetas";
-import { CardVehículos } from "./component/cardVehículos";
+import { CardVehiculos } from "./component/cardVehiculos";
 import { VistaPersonajes } from "./views/VistaPersonajes";
 import { VistaPlanetas } from "./views/VistaPlanetas";
-import { VistaVehículos } from "./views/VistaVehículos";
+import { VistaVehiculos } from "./views/VistaVehiculos";
 
 //create your first component
 const Layout = () => {
@@ -34,11 +34,11 @@ const Layout = () => {
 						<Route exact path="/VistaPersonajes/:id">
 							<VistaPersonajes />
 						</Route>
-						<Route exact path="/VistaPlanetas/:VistaPlanetas:id">
+						<Route exact path="/VistaPlanetas/:id">
 							<VistaPlanetas />
 						</Route>
-						<Route exact path="/VistaVehículos/:VistaVehículos:id">
-							<VistaVehículos />
+						<Route exact path="/VistaVehículos/:id">
+							<VistaVehiculos />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

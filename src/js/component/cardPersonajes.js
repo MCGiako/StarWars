@@ -27,7 +27,7 @@ export const CardPersonajes = props => {
 					<button
 						className="btn btn-outline-warning float-right"
 						onClick={() => {
-							actions.AgregarAFavoritos(VistaPersonajes.nombre);
+							actions.AgregarAFavoritos(VistaPersonajes.name);
 							console.log(store.Favoritos);
 						}}>
 						<i className="fas fa-heart text-warning" />

@@ -4,9 +4,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personajes: [],
 			informacionPersonajes: {},
 			planetas: [],
-			InformaciónPlanetas: {},
-			vehículos: [],
-			InformaciónVehículos: {},
+			InformacionPlanetas: {},
+			vehiculos: [],
+			InformacionVehiculos: {},
 			Favoritos: []
 		},
 
@@ -33,13 +33,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			vehículos: () => {
+			vehiculos: () => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/vehicles/")
 					.then(response => response.json())
 					.then(result => {
-						setStore({ vehículos: result.results });
-						console.log(vehículos);
+						setStore({ vehiculos: result.results });
+						console.log("vehiculos", result.results);
 					})
 					.catch(error => console.log("error", error));
 			},
@@ -56,31 +56,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			fetchInformaciónPlanetas: uid => {
+			fetchInformacionPlanetas: uid => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/planets/" + uid)
 					.then(response => response.json())
 					.then(result => {
-						setStore({ InformaciónPlanetas: result.results.properties });
-						console.log("InformaciónPlanetas", store.InformaciónPlanetas);
+						setStore({ InformacionPlanetas: result.result.properties });
 					})
 					.catch(error => console.log("error", error));
 			},
 
-			fetchInformaciónVehículos: uid => {
+			fetchInformacionVehiculos: uid => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/vehicles/" + uid)
 					.then(response => response.json())
 					.then(result => {
-						setStore({ InformaciónVehículos: result.results.properties });
-						console.log("InformaciónVehículos", store.InformaciónVehículos);
+						setStore({ InformacionVehiculos: result.result.properties });
 					})
 					.catch(error => console.log("error", error));
 			},
 
-			AgregarAFavoritos: nombre => {
+			AgregarAFavoritos: name => {
 				const store = getStore();
-				setStore({ Favoritos: [...store.Favoritos, nombre] });
+				setStore({ Favoritos: [...store.Favoritos, name] });
 				let valorPreciso = [...new Set(store.Favoritos)];
 				setStore({ Favoritos: valorPreciso });
 				console.log(store.Favoritos);
