@@ -20,14 +20,14 @@ export const CardVehiculos = props => {
 				<div className="card-body text-warning">
 					<h5 className="card-title">{props.vehiculos.name}</h5>
 					<Link to={"./VistaVehiculos/" + props.vehiculos.uid}>
-						<a href="#" className="btn btn-info text-dark">
+						<a href="#" className="btn btn-warning text-dark">
 							Leer más
 						</a>
 					</Link>
 					<button
 						className="btn btn-outline-warning float-right"
 						onClick={() => {
-							actions.AgregarAFavoritos(VistaVehiculos.name);
+							actions.AgregarAFavoritos(props.vehiculos.name);
 							console.log(store.Favoritos);
 						}}>
 						<i className="fas fa-heart text-warning" />
